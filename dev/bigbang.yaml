@@ -1,4 +1,4 @@
-apiVersion: v1
+  apiVersion: v1
 kind: Namespace
 metadata:
   name: bigbang
@@ -6,15 +6,15 @@ metadata:
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: environment-repo
+  name: 
   namespace: bigbang
 spec:
   interval: 1m
-  url: https://replace-with-your-git-repo.git
+  url: git@github.com:makersmasher/bigbang.git
   ref:
-    branch: replace-with-your-branch
+    branch: main
   secretRef:
-    name: private-git
+      name: private-git
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
@@ -32,3 +32,4 @@ spec:
     provider: sops
     secretRef:
       name: sops-gpg
+
