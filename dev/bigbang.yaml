@@ -1,4 +1,4 @@
-  apiVersion: v1
+apiVersion: v1
 kind: Namespace
 metadata:
   name: bigbang
@@ -6,11 +6,11 @@ metadata:
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: 
+  name: environment-repo
   namespace: bigbang
 spec:
   interval: 1m
-  url: git@github.com:makersmasher/bigbang.git
+  url: https://github.com/makersmasher/bigbang.git
   ref:
     branch: main
   secretRef:
